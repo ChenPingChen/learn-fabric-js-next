@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import * as fabric from "fabric";
 import { featureTools } from "../tools/feature-tools";
 import { isImageSelected } from "../tools/feature-tools/basic-tools";
+import { CustomPolygon } from "../lib/drawing-tools/polygon/CustomPolygon";
 
 interface FeatureToolbarProps {
   object: fabric.Object;
@@ -25,6 +26,9 @@ const FeatureToolbar: React.FC<FeatureToolbarProps> = ({ object, onClose }) => {
     // For images, only show image-specific tools
     if (isImage) {
       return tool.imageOnly;
+    }
+    if (object instanceof CustomPolygon) {
+      return tool.objectType === "region";
     }
     // For other objects, show object-specific tools
     return tool.objectType && object?.type?.includes(tool.objectType);

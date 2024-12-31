@@ -27,7 +27,8 @@ export class PolygonEdge extends fabric.Line {
         hasControls: false,
         perPixelTargetFind: true,
         selectable: false,
-        evented: false,
+        evented: true,
+        hoverCursor: 'pointer',
       });
   
       this.source = source;

@@ -5,6 +5,7 @@ import searchAndRecolor from "./search-tools/searchAndRecolor";
 import searchAndReplace from "./search-tools/searchAndReplace";
 import deleteImage from "./image-tools/deleteImage";
 import removeBackground from "./image-tools/removeBackground";
+import door from "./shape-tools/door";
 // import insertImage from "./image-tools/insertImage";
 import {
   color,
@@ -66,6 +67,7 @@ const shapeTools = [
   lineColor,
   // Polygon tools
   polygonSides,
+  door,
   // Text tools
   fontSize,
   fontFamily,
